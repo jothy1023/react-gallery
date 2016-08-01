@@ -12,16 +12,18 @@ function getDefaultModules() {
     loaders: [
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader!postcss-loader!autoprefixer-loader?{browsers: ["last 2 version"]}'
+        loader: 'style-loader!css-loader!autoprefixer-loader?{browsers:["last 2 version", "firefox 15"]}!postcss-loader'
       },
       {
         test: /\.sass/,
         loader: 'style-loader!css-loader!postcss-loader!sass-loader?outputStyle=expanded&indentedSyntax'
       },
+      // 引入 autoprefix-loader 为样式自动添加前缀，据说已经废弃，取而代之的是 postcss ？
       {
         test: /\.scss/,
-        loader: 'style-loader!css-loader!postcss-loader!autoprefixer-loader?{browsers: ["last 2 version"]}!sass-loader?outputStyle=expanded'
+        loader: 'style-loader!css-loader!autoprefixer-loader?{browsers:["last 2 version", "firefox 15"]}!postcss-loader!sass-loader?outputStyle=expanded'
       },
+      // 添加了一个解析图片的 json 数据的 json-loader
       {
         test: /\.json$/,
         loader: 'json-loader'

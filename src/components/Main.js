@@ -71,7 +71,7 @@ var ImgFigure = React.createClass({
 
     if(this.props.arrange.isCenter) {
       styleObj.zIndex = 11;
-      styleObj.boxShadow = '3px 2px 3px #cde3ec';
+      styleObj.boxShadow = '3px 2px 3px #C4C4C4';
     }
 
     var imgFigureClassName = 'img-figure';
